@@ -1,0 +1,7 @@
+1	Muse	https://www.youtube.com/watch?v=w8KQmps-Sog
+2	The Killers	https://www.youtube.com/watch?v=ff0oWESdmH0
+3	Editors	https://www.youtube.com/watch?v=Wq4tyDRhU_4
+4	RHCP	https://www.youtube.com/watch?v=lwlogyj7nFE
+5	Radiohead	https://www.youtube.com/watch?v=IBH97ma9YiI
+6	Coldplay	https://www.youtube.com/watch?v=d020hcWA_Wg
+7	Linkin Park	https://www.youtube.com/watch?v=kXYiU_JCYtU

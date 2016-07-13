@@ -1,0 +1,64 @@
+iinput @input
+load r5, @input
+push r5
+call @fibbonacci
+echo r10
+
+halt
+
+# Method fibbonacci(i)
+# ------------------------------------------
+# takes in the i parameter over the stack, calculates into r10
+#
+
+
+@fibbonacci: move r0, [r15+2]      ; stack parameter
+
+  move r4, 0
+  testEquals r0, r4
+  jumpIfTrue @initVal     ; know how to calculate
+
+
+  move r4, 1
+  testEquals r0, r4
+  jumpIfTrue @initVal     ; know how to calculate
+
+  jump @recurse
+
+
+@initVal: move r10,1
+    jump @exit
+
+@recurse: decrement r0    ; N -> N-1
+    move r6, -1
+
+    testEquals r0, r6 		; N == -1
+    jumpIfTrue @exit      ; stop recursion if N == -1
+
+
+    push r0         		    ; pass argument
+    call @fibbonacci 				; fibbonacci(n-1)
+    pop r0          		    ; r0 <- N-1
+    decrement r0
+
+    testEquals r0, r6 		; N == -1
+    jumpIfTrue @exit      ; stop recursion if N == -1
+
+    move r5, r10         	; store previous solution on stack
+    push r10
+
+    push r0         	         ; pass argument
+    call @fibbonacci 					; fibbonacci(n-2)
+    increment r15			        ; restore stack
+
+
+
+    pop r0          		; r0 <- fibbonacci(n-1)
+    add r10, r10, r0  		; r10 <- solution
+
+@exit:  ret
+
+
+@input: DEFSTR ""
+RESERVE:19
+@stackTop:	RESERVE			; stack reservation

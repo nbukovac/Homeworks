@@ -1,0 +1,50 @@
+#inicijalizacija
+				move r0, 1
+				move r1, 1
+				load r10, @unosPoruka
+				load r11, @krivoPoruka
+				load r12, @noviRed
+				
+#unos početnog broja
+@unos:			echo r10
+				iinput @memLokacija
+				jumpIfTrue @nastavak
+				echo r11
+				jump @unos
+				
+#
+@nastavak:		load r2, @memLokacija
+				move r3, 0
+
+@petlja:		testEquals r2, r3
+				jumpIfTrue @kraj
+				decrement r2
+				push r0
+				push r1
+				call @fibonacci
+				pop r1
+				pop r0
+				jump @petlja
+				
+@kraj:			increment r15
+				echo r1
+				halt	
+
+@fibonacci:		move r0, [r15 + 3]
+				move r1, [r15 + 2]
+				
+				add r0, r0, r1
+				
+				move [r15 + 2], r0
+				move [r15 + 3], r1
+				
+				ret
+
+# Slijedi mjesto predviđeno za stog
+			RESERVE:19
+@stackTop:	RESERVE
+
+@memLokacija:	DEFINT 100
+@unosPoruka:	DEFSTR "Unesite početni broj: "
+@krivoPoruka:	DEFSTR "Unos nije moguće protumačiti kao cijeli broj.\n"
+@noviRed:		DEFSTR "\n"

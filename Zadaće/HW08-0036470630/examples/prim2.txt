@@ -1,0 +1,36 @@
+#inicijalizacija
+				load r0, @nula
+				load r1, @ponavljanje
+				load r10, @unosPoruka
+				load r11, @krivoPoruka
+				load r12, @poruka
+				load r13, @noviRed
+
+#unos broja				
+@unos:			echo r10
+				iinput @memLokacija
+				jumpIfTrue @nastavak
+				echo r11
+				jump @unos
+				
+#Ispis sljedećih 5 brojeva
+@nastavak:		load r2, @memLokacija
+				echo r12
+				
+@petlja:		testEquals r0, r1
+				jumpIfTrue @kraj
+				increment r2
+				echo r2
+				echo r13
+				decrement r1
+				jump @petlja
+				
+@kraj:			halt	
+
+@memLokacija:	DEFINT 200
+@nula:			DEFINT 0
+@ponavljanje:	DEFINT 5
+@unosPoruka:	DEFSTR "Unesite početni broj: "	
+@krivoPoruka:	DEFSTR "Unos nije moguće protumačiti kao cijeli broj.\n" 
+@poruka:		DEFSTR "Sljedećih 5 brojeva je:\n"
+@noviRed:		DEFSTR "\n"

@@ -1,0 +1,192 @@
+html {
+    color: white;
+    font-family: Helvetica, Verdana, Arial , sans-serif;
+    background-image: url(images/plitvice1.jpg);
+}
+
+body {
+    margin-left: 5em;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 5em;
+    padding: 0px;
+    background-color: forestgreen;
+}
+
+header {
+    padding: 5px;
+    text-align: center;
+    border-bottom: 3px solid darkslategray;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header a:hover {
+    padding: 0px;
+    margin: 0px;
+    background-color: forestgreen;
+}
+
+nav {
+    width: 15%;
+    float: left;
+    margin: 0px;
+    padding: 0.1em 0.1em 0.1em 0em;
+    text-align: center;
+}
+
+nav li {
+    list-style-type: none;
+    line-height: 30px;
+    border: 2px solid forestgreen;
+    background: grey;
+    margin-left: 0px;
+}
+
+nav li a {
+    color: white;
+}
+
+nav li a:hover {
+    padding: 5px;
+}
+
+
+section {
+    float: right;
+    padding-left: 1em;
+    padding-right: 1em;
+    width: 78%;
+    border-left: 3px solid darkslategray;
+    background-color: #B7DAA0;
+    color: #605952;
+}
+
+#desna-slika {
+    float: right;
+    margin-right: 2em; 
+}
+
+a {
+    text-decoration: none;
+    color: orangered;
+}
+
+a:hover {
+    color: black;
+    background-color: white;
+}
+
+em {
+    font-weight: bolder;
+}
+
+figcaption {
+    margin-left: 2.5em;
+    font-size: 16pt;
+    font-family: monospace;
+}
+
+#fig-order-list {
+    font-size: 13pt;
+    color: darkslategrey;
+    margin-left: 1em;
+}
+
+table, td, th {
+    border: 2px solid darkslategray;
+    border-collapse: collapse;
+    padding: 0.2em;
+}
+
+#pocetna-table {
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+th {
+    background-color: darkslategray;
+    color: white;
+    margin-right: 2px;
+    margin-left: 2px;
+}
+
+td {
+    background-color: white;
+    color: black;
+}
+
+table#obrazac td {
+    background-color: #B7DAA0;
+    padding: 10px;
+    border-top: 2px solid darkslategray;
+}
+
+td.label-text {
+    text-align: left;
+}
+
+td.number {
+    text-align: center;
+}
+
+form table, form td, form th {
+    border: 0px;
+    font-size: 13pt;
+    padding 5px;
+}
+
+input[type="text"], input[type="email"], input[type="tel"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 1px #dcdcdc;
+    transition: box-shadow 0.3s, border 0.3s;
+}
+
+input[type="text"].focus, input[type="email"].focus, input[type="tel"].focus {
+    border: solid 1px #707070;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 1px #969696;
+}
+
+select {
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 1px #dcdcdc;
+}
+
+select.focus {
+    border: solid 1px #707070;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 1px #969696;
+}
+
+.button {
+    padding: 5px;
+    margin: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 13pt;
+    border-radius: 5px;
+}
+
+#resetButton {
+    background-color: red;
+    border: 2px solid red;
+}
+
+#submitButton {
+    background-color: forestgreen;
+    border: 2px solid forestgreen;
+}
+
+footer {
+    text-align: center;
+    background-color: darkgreen;
+    clear: both;
+    font-size: 10pt;
+    padding: 20px;
+    margin: 0px;
+}

@@ -1,0 +1,36 @@
+			load r10, @prompt		;default message
+			load r9, @error  		;load error message
+			load r8, @newLine		;new line
+@scan:			echo r10		
+	 		iinput @number
+			jumpIfTrue @scanned
+			echo r9				; print error if not true
+			echo r8				; new line
+			jump @scan			; start again from the begining
+@scanned:		load r2, @message 		; default message
+			load r6, @zero			; for comparison
+			load r7, @counter		; counter
+			load r0, @number		
+			
+
+		       echo r2
+		       echo r8
+
+@loop:			testEquals r7, r6
+			jumpIfTrue @end
+			echo r0
+			echo r8
+			increment r0
+			decrement r7
+			jump @loop
+
+@end:		halt
+
+@prompt: 	DEFSTR "Unesite početni broj:"
+@error: 	DEFSTR "Unos nije moguće protumačiti kao cijeli broj."
+@message:	DEFSTR "Sljedećih 5 brojeva je: "
+@zero:		DEFINT	0
+@counter:	DEFINT	5
+@number:  	DEFSTR ""
+@newLine:	DEFSTR "\n"
+
